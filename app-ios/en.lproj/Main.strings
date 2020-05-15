@@ -1,0 +1,21 @@
+
+/* Class = "UITextField"; placeholder = "Введите имя пользователя..."; ObjectID = "1wv-Pb-4sr"; */
+"1wv-Pb-4sr.placeholder" = "Введите имя пользователя...";
+
+/* Class = "UIButton"; normalTitle = "Войти"; ObjectID = "Jqt-aD-cyu"; */
+"Jqt-aD-cyu.normalTitle" = "Войти";
+
+/* Class = "UILabel"; text = "Пароль"; ObjectID = "MKE-xE-hyQ"; */
+"MKE-xE-hyQ.text" = "Пароль";
+
+/* Class = "UILabel"; text = "Авторизация"; ObjectID = "dqL-7l-oIL"; */
+"dqL-7l-oIL.text" = "Авторизация";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "fhg-mO-DB7"; */
+"fhg-mO-DB7.title" = "Title";
+
+/* Class = "UILabel"; text = "Имя "; ObjectID = "n62-4W-TKJ"; */
+"n62-4W-TKJ.text" = "Имя ";
+
+/* Class = "UITextField"; placeholder = "Введите пароль..."; ObjectID = "z4k-ED-Y5G"; */
+"z4k-ED-Y5G.placeholder" = "Введите пароль...";
