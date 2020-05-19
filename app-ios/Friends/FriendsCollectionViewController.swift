@@ -67,5 +67,4 @@ extension FriendsCollectionViewController: UICollectionViewDelegateFlowLayout {
         }
     }
     
-    
 }

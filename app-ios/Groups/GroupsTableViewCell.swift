@@ -3,6 +3,7 @@ import UIKit
 class GroupsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var avatarGroup: UIImageView!
+    @IBOutlet weak var avatarGroupView: UIView!
     
     @IBOutlet weak var nameGroup: UILabel!
     
@@ -11,7 +12,7 @@ class GroupsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        avatarGroupcircle()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -25,4 +26,12 @@ class GroupsTableViewCell: UITableViewCell {
         self.avatarGroup.image = odject.avatarImg
     }
     
+    func avatarGroupcircle() {
+        avatarGroup.layer.cornerRadius = avatarGroup.frame.width / 2
+           avatarGroupView.layer.cornerRadius = avatarGroupView.frame.width / 2
+           avatarGroupView.layer.shadowColor = UIColor.black.cgColor
+           avatarGroupView.layer.shadowOpacity = 0.1
+           avatarGroupView.layer.shadowRadius = 1
+           avatarGroupView.layer.shadowOffset = CGSize.zero
+       }
 }

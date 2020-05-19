@@ -1,11 +1,3 @@
-//
-//  FriendsViewController.swift
-//  app-ios
-//
-//  Created by Admin on 07.05.2020.
-//  Copyright © 2020 Admin. All rights reserved.
-//
-
 import UIKit
 
 class FriendsViewController: UITableViewController {
@@ -95,6 +87,13 @@ class FriendsViewController: UITableViewController {
         action.image = UIImage(systemName: "suit.heart")
         
         return action
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "friend" {
+           
+            
+        }
     }
     
 }

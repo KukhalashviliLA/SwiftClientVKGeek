@@ -12,7 +12,7 @@ var users = [
     user(name: "Юлия Сидорова", avatar: UIImage(named: "stepanenko")!, city: "Уренгой", isLike: false),
     user(name: "Иван Охлобыстин", avatar: UIImage(named: "user1")!, city: "Нягань", isLike: false),
     user(name: "Марина Иванова", avatar: UIImage(named: "user2")!, city: "Воркута", isLike: false),
-    user(name: "Михаил Мухин", avatar: UIImage(named: "user3")!, city: "Оренбург", isLike: false)
+    user(name: "Михаил Бублик", avatar: UIImage(named: "user3")!, city: "Санкт-Петербург", isLike: false)
 ]
 
 //let image = UIImage(named: "gigi")!
