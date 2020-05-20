@@ -27,11 +27,11 @@ class GroupsTableViewCell: UITableViewCell {
     }
     
     func avatarGroupcircle() {
-        avatarGroup.layer.cornerRadius = avatarGroup.frame.width / 2
-           avatarGroupView.layer.cornerRadius = avatarGroupView.frame.width / 2
-           avatarGroupView.layer.shadowColor = UIColor.black.cgColor
-           avatarGroupView.layer.shadowOpacity = 0.1
-           avatarGroupView.layer.shadowRadius = 1
-           avatarGroupView.layer.shadowOffset = CGSize.zero
+            avatarGroup.layer.cornerRadius = avatarGroup.frame.width / 2
+            avatarGroupView.layer.cornerRadius = avatarGroupView.frame.width / 2
+            avatarGroupView.layer.shadowColor = UIColor.black.cgColor
+            avatarGroupView.layer.shadowOpacity = 0.1
+            avatarGroupView.layer.shadowRadius = 1
+            avatarGroupView.layer.shadowOffset = CGSize.zero
        }
 }
