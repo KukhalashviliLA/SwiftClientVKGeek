@@ -13,3 +13,4 @@ struct user {
     var city: String
     var isLike: Bool
 }
+

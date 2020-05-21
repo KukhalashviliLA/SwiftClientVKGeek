@@ -8,13 +8,25 @@ var groups = [
 ]
 
 var users = [
-    user(name: "Артур Пирожков", avatar: UIImage(named: "gigi")!, city: "Москва", isLike: false),
+    user(name: "Артур Пирожков", avatar: UIImage(named: "gigi")!, city: "Москва", isLike: true),
     user(name: "Юлия Сидорова", avatar: UIImage(named: "stepanenko")!, city: "Уренгой", isLike: false),
     user(name: "Иван Охлобыстин", avatar: UIImage(named: "user1")!, city: "Нягань", isLike: false),
     user(name: "Марина Иванова", avatar: UIImage(named: "user2")!, city: "Воркута", isLike: false),
-    user(name: "Михаил Бублик", avatar: UIImage(named: "user3")!, city: "Санкт-Петербург", isLike: false)
+    user(name: "Михаил Бублик", avatar: UIImage(named: "user3")!, city: "Санкт-Петербург", isLike: false),
+    user(name: "Василий Алибабаевич", avatar: UIImage(named: "alibabaevich")!, city: "Волгоград", isLike: false)
 ]
 
 //let image = UIImage(named: "gigi")!
 
 let frend = ["Photo1", "Photo2", "Photo3", "Photo4", "Photo5", "Photo6", "Photo7", "user1", "user2", "user3"]
+
+
+let arrName = ["А","Ю", "И", "М","В"].sorted()
+let tempArr = Array(Set(users.compactMap { $0.name.prefix(1) } )).sorted()
+
+
+
+
+
+
+

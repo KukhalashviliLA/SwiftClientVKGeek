@@ -1,32 +1,65 @@
 import UIKit
 
 class FriendsViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
     }
-
+    
     // MARK: - Table view data source
-
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return arrName.count
     }
-
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return arrName[section]
+    }
+    
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return arrName
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return users.count
+        var userRow = [user]()
+        
+        for user in users {
+            if arrName[section].contains(user.name.first!) {
+            userRow.append(user)
+            }
+        }
+        
+        
+        return userRow.count
     }
-
+    
+    func sectionTitle () {
+        
+    }
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "usersCell", for: indexPath) as! FriendsTableViewCell
-            let odject = users[indexPath.row]
-            cell.set(odject: odject)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "usersCell", for: indexPath) as! FriendsTableViewCell
+        
+        var userRow = [user]()
+        
+        for user in users {
+            if arrName[indexPath.section].contains(user.name.first!) {
+            userRow.append(user)
+            }
+        }
+        
+        cell.nameFriend.text = userRow[indexPath.row].name
+        cell.cityFriend.text = userRow[indexPath.row].city
+        // не работает стока ниже не могу понять почему
+        cell.avatarControl.avatar.image = userRow[indexPath.row].avatar
         return cell
     }
-
+    
     
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
@@ -91,9 +124,12 @@ class FriendsViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "friend" {
-           
-            
-        }
-    }
+
     
+        
+    }
+        
+    }
+
+
 }
