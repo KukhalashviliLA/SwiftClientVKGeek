@@ -37,10 +37,6 @@ class FriendsViewController: UITableViewController {
         return userRow.count
     }
     
-    func sectionTitle () {
-        
-    }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "usersCell", for: indexPath) as! FriendsTableViewCell

@@ -7,6 +7,14 @@ var groups = [
     group(name: "Beeline", description: "Гиги за шаги", avatarImg: UIImage(named: "beeline")!, isLike: false),
 ]
 
+var allGroups = [
+       group(name: "Музыка", description: "описание группы", avatarImg: UIImage(named: "gigi")!, isLike: false),
+       group(name: "Приколы", description: "описание группы", avatarImg: UIImage(named: "gigi")!, isLike: false),
+       group(name: "Фильмы", description: "описание группы", avatarImg: UIImage(named: "gigi")!, isLike: false),
+       group(name: "MDK", description: "описание группы", avatarImg: UIImage(named: "gigi")!, isLike: false),
+   ]
+
+
 var users = [
     user(name: "Артур Пирожков", avatar: UIImage(named: "gigi")!, city: "Москва", isLike: true),
     user(name: "Юлия Сидорова", avatar: UIImage(named: "stepanenko")!, city: "Уренгой", isLike: false),
@@ -22,7 +30,11 @@ let frend = ["Photo1", "Photo2", "Photo3", "Photo4", "Photo5", "Photo6", "Photo7
 
 
 let arrName = ["А","Ю", "И", "М","В"].sorted()
-let tempArr = Array(Set(users.compactMap { $0.name.prefix(1) } )).sorted()
+
+//при попытки получить массиы только с теми буквами которые нужны возникает ошибка: Expressions are not allowed at the top level
+//let tempArr = Array(Set(users.compactMap { $0.name.prefix(1) } )).sorted()
+//arrName = tempArr
+//print(tempArr)
 
 
 
