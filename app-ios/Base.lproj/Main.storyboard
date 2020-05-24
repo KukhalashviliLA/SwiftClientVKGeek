@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -330,9 +330,18 @@
                                             <subviews>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="guw-fQ-QVR" customClass="AvatarControl" customModule="app_ios" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tn7-IH-U2F">
+                                                            <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                        </imageView>
+                                                    </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
+                                                        <constraint firstItem="Tn7-IH-U2F" firstAttribute="top" secondItem="guw-fQ-QVR" secondAttribute="top" id="4r0-Xl-UA4"/>
                                                         <constraint firstAttribute="width" constant="76" id="9QX-xl-fqp"/>
+                                                        <constraint firstItem="Tn7-IH-U2F" firstAttribute="leading" secondItem="guw-fQ-QVR" secondAttribute="leading" id="Biu-PR-ypJ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Tn7-IH-U2F" secondAttribute="trailing" id="Sws-Ia-lWQ"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Tn7-IH-U2F" secondAttribute="bottom" id="YP5-dD-XYI"/>
                                                         <constraint firstAttribute="height" constant="76" id="Z5m-Oh-6Ge"/>
                                                     </constraints>
                                                 </view>
@@ -376,6 +385,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="avatarControl" destination="guw-fQ-QVR" id="Smn-rH-HVY"/>
+                                    <outlet property="avatarFriend" destination="Tn7-IH-U2F" id="7xM-RE-TY2"/>
                                     <outlet property="cityFriend" destination="tqd-yv-Jbl" id="fkb-S8-3MN"/>
                                     <outlet property="nameFriend" destination="9KU-2g-VaB" id="Scm-gg-sEn"/>
                                     <segue destination="r2h-fP-28P" kind="show" identifier="friend" id="FrL-It-L5x"/>

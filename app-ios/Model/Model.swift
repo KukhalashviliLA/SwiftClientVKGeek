@@ -14,3 +14,7 @@ struct user {
     var isLike: Bool
 }
 
+struct SectionFriend {
+    var sectionName: String
+    var frendStruct: [user]
+}

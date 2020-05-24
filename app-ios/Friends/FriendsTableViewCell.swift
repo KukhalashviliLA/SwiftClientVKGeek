@@ -6,6 +6,7 @@ class FriendsTableViewCell: UITableViewCell {
     @IBOutlet weak var nameFriend: UILabel!
     @IBOutlet weak var cityFriend: UILabel!
     @IBOutlet weak var avatarControl: AvatarControl!
+    @IBOutlet weak var avatarFriend: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

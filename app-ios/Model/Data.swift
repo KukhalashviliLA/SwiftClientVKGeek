@@ -21,6 +21,7 @@ var users = [
     user(name: "Иван Охлобыстин", avatar: UIImage(named: "user1")!, city: "Нягань", isLike: false),
     user(name: "Марина Иванова", avatar: UIImage(named: "user2")!, city: "Воркута", isLike: false),
     user(name: "Михаил Бублик", avatar: UIImage(named: "user3")!, city: "Санкт-Петербург", isLike: false),
+    user(name: "Олег Бамбук", avatar: UIImage(named: "user3")!, city: "Санкт-Петербург", isLike: false),
     user(name: "Василий Алибабаевич", avatar: UIImage(named: "alibabaevich")!, city: "Волгоград", isLike: false)
 ]
 

@@ -106,10 +106,7 @@ class GroupsViewController: UITableViewController {
             let searchGroupsViewController = segue.source as! SearchGroupsTableViewController
             if let indexPath = searchGroupsViewController.tableView.indexPathForSelectedRow {
                 let groupT = allGroups[indexPath.row]
-
-                
                 if !groups.contains(where: { $0.name == groupT.name}){
-                //Я так и не смог сделать проверку на наличие группы с своих группах
                     groups.append(groupT)
                 }
                     tableView.reloadData()

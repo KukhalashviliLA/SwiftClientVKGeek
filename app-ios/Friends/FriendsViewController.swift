@@ -2,60 +2,87 @@ import UIKit
 
 class FriendsViewController: UITableViewController {
     
+    
+    var searchController: UISearchController!
+    var sectionFriend : [SectionFriend] = []
+    var searhResult: [SectionFriend] = []
+    var friendsTemp: [user] = []
+    var temp: [user] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchController = UISearchController(searchResultsController: nil)
+        tableView.tableHeaderView = searchController.searchBar
+        searchController.searchResultsUpdater = self
+        self.searchController.searchBar.placeholder = "Введите имя..."
         
+        let sectionTitle = Array(Set(users.compactMap { $0.name.prefix(1) } )).sorted()
+        print(sectionTitle)
+        
+        friendsTemp = users
+        
+        for j in 0...sectionTitle.count - 1
+        {
+            for i in 0...friendsTemp.count - 1
+            {
+                if (sectionTitle[j] == friendsTemp[i].name.prefix(1) && friendsTemp[i].name != "0")
+                {
+                    temp.append(friendsTemp[i])
+                    friendsTemp[i].name = "0"
+                }
+            }
+            
+            let sectionFriendtemp = SectionFriend(sectionName: String(sectionTitle[j]), frendStruct: temp)
+            sectionFriend.append(sectionFriendtemp)
+            temp = []
+        }
     }
     
     // MARK: - Table view data source
     
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return arrName.count
+        if(searchController.isActive){
+            return searhResult.count
+        } else {
+            return sectionFriend.count
+        }
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return arrName[section]
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?  {
+        if(searchController.isActive){
+            return searhResult[section].sectionName
+        } else {
+            return sectionFriend[section].sectionName
+        }
     }
     
-    
-    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return arrName
-    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var userRow = [user]()
-        
-        for user in users {
-            if arrName[section].contains(user.name.first!) {
-            userRow.append(user)
-            }
+        if(searchController.isActive){
+            return searhResult[section].frendStruct.count
+        } else {
+            return sectionFriend[section].frendStruct.count
         }
-        
-        
-        return userRow.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "usersCell", for: indexPath) as! FriendsTableViewCell
         
-        var userRow = [user]()
-        
-        for user in users {
-            if arrName[indexPath.section].contains(user.name.first!) {
-            userRow.append(user)
-            }
+        if(searchController.isActive){
+            cell.nameFriend.text = searhResult[indexPath.section].frendStruct[indexPath.row].name
+            cell.avatarFriend.image = searhResult[indexPath.section].frendStruct[indexPath.row].avatar
+            cell.cityFriend.text = searhResult[indexPath.section].frendStruct[indexPath.row].city
+            return cell
+        } else {
+            cell.nameFriend.text = sectionFriend[indexPath.section].frendStruct[indexPath.row].name
+            cell.avatarFriend.image = sectionFriend[indexPath.section].frendStruct[indexPath.row].avatar
+            cell.cityFriend.text = sectionFriend[indexPath.section].frendStruct[indexPath.row].city
+            return cell
         }
-        
-        cell.nameFriend.text = userRow[indexPath.row].name
-        cell.cityFriend.text = userRow[indexPath.row].city
-        // не работает стока ниже не могу понять почему
-        cell.avatarControl.avatar.image = userRow[indexPath.row].avatar
-        return cell
     }
-    
     
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
@@ -120,12 +147,48 @@ class FriendsViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "friend" {
-
+            
+            
+            
+        }
+        
+    }
     
-        
-    }
-        
-    }
+    
+}
 
-
+// Поиск
+extension FriendsViewController: UISearchResultsUpdating  {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText2 = searchController.searchBar.text {
+            filterContent(searchText: searchText2)
+            tableView.reloadData()
+        }
+    }
+    
+    func filterContent(searchText: String) {
+        var frendStructTemp: [user] = []
+        searhResult = []
+        
+        //Текст введеный в serchBar
+        print("\(searchText)")
+        for z in 0...sectionFriend.count - 1
+        {
+            for u in 0...sectionFriend[z].frendStruct.count - 1{
+                let str1 = sectionFriend[z].frendStruct[u].name.lowercased()
+                
+                let str2 = searchText.lowercased()
+                
+                if ( str1.contains(str2)  ){
+                    frendStructTemp.append(sectionFriend[z].frendStruct[u])
+                }
+            }
+            if !frendStructTemp.isEmpty{
+                let sectionFriendtemp = SectionFriend(sectionName: String(sectionFriend[z].sectionName), frendStruct: frendStructTemp)
+                searhResult.append(sectionFriendtemp)
+                frendStructTemp = []
+            }
+        }
+    }
 }
