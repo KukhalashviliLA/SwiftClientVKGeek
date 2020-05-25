@@ -170,9 +170,7 @@ extension FriendsViewController: UISearchResultsUpdating  {
     func filterContent(searchText: String) {
         var frendStructTemp: [user] = []
         searhResult = []
-        
-        //Текст введеный в serchBar
-        print("\(searchText)")
+
         for z in 0...sectionFriend.count - 1
         {
             for u in 0...sectionFriend[z].frendStruct.count - 1{

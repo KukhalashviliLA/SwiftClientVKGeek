@@ -10,8 +10,13 @@ class FriendsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
-
+        avatarFriend.layer.cornerRadius = avatarFriend.frame.width / 2
+        avatarFriend.layer.cornerRadius = avatarFriend.frame.width / 2
+        avatarFriend.layer.shadowColor = UIColor.black.cgColor
+        avatarFriend.layer.shadowOpacity = 0.1
+        avatarFriend.layer.shadowRadius = 1
+        avatarFriend.layer.shadowOffset = CGSize.zero
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

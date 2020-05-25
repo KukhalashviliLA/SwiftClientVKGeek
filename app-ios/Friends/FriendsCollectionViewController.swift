@@ -30,6 +30,7 @@ class FriendsCollectionViewController: UICollectionViewController {
         let image = UIImage(named: imageName)
         
         cell.friendsIV.image = image
+        
         return cell
         
     }
