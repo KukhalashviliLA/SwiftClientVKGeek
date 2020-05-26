@@ -122,6 +122,7 @@ class FriendsViewController: UITableViewController {
     }
     
     
+    
     // Ошибка при удалении друга, еще не разобрался
     
     //Удаление при движении
