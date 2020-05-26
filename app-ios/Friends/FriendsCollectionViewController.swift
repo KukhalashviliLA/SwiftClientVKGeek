@@ -7,7 +7,6 @@ class FriendsCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Тут будет имя друга"
         collectionView.showsVerticalScrollIndicator = false
     }
 
@@ -29,7 +28,9 @@ class FriendsCollectionViewController: UICollectionViewController {
         
         let imageName = frend[indexPath.item]
         let image = UIImage(named: imageName)
+        
         cell.friendsIV.image = image
+        
         return cell
         
     }

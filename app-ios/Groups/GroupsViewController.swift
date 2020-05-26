@@ -84,6 +84,7 @@ class GroupsViewController: UITableViewController {
         action.image = UIImage(systemName: "trash")
         return action
     }
+    
     // Лайк
     func likeAction (at indexPath: IndexPath) -> UIContextualAction {
         var object = groups[indexPath.row]
@@ -97,4 +98,21 @@ class GroupsViewController: UITableViewController {
         
         return action
     }
+    
+    @IBAction func addGroup(segue: UIStoryboardSegue) {
+        
+        
+        
+        if segue.identifier == "addGroup" {
+            let searchGroupsViewController = segue.source as! SearchGroupsTableViewController
+            if let indexPath = searchGroupsViewController.tableView.indexPathForSelectedRow {
+                let groupT = allGroups[indexPath.row]
+                if !groups.contains(where: { $0.name == groupT.name}){
+                    groups.append(groupT)
+                }
+                    tableView.reloadData()
+                }
+            }
+        }
+    
 }
