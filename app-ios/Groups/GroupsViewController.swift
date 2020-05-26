@@ -84,6 +84,7 @@ class GroupsViewController: UITableViewController {
         action.image = UIImage(systemName: "trash")
         return action
     }
+    
     // Лайк
     func likeAction (at indexPath: IndexPath) -> UIContextualAction {
         var object = groups[indexPath.row]

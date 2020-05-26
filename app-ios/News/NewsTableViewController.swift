@@ -38,9 +38,9 @@ class NewsTableViewController: UITableViewController {
         cell.publicationDate.text = news[indexPath.row].date
         cell.authorImg.image = news[indexPath.row].authorImg
         cell.newsImg.image = news[indexPath.row].newsImg
-        cell.newsLikeCount.text = String(news[indexPath.row].isLikeCount)
-        cell.discussionCount.text = String(news[indexPath.row].discussionCount)
-        cell.forwardCount.text = String(news[indexPath.row].forwardCount)
+//        cell.newsLikeCount.text = String(news[indexPath.row].isLikeCount)
+//        cell.discussionCount.text = String(news[indexPath.row].discussionCount)
+//        cell.forwardCount.text = String(news[indexPath.row].forwardCount)
         cell.newsDescription.text = news[indexPath.row].newsText
         cell.newsDescriptionHC.constant = cell.newsDescription.contentSize.height
         

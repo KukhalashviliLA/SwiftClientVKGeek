@@ -115,22 +115,28 @@ class FriendsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let done = doneAction(at: indexPath)
+//        let done = doneAction(at: indexPath)
         let like = likeAction(at: indexPath)
-        return UISwipeActionsConfiguration (actions: [done, like])
+        return UISwipeActionsConfiguration (actions: [like])
+//        return UISwipeActionsConfiguration (actions: [done, like])
     }
     
+    
+    // Ошибка при удалении друга, еще не разобрался
+    
     //Удаление при движении
-    func doneAction(at indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .destructive, title: "trash") { (action, view, completion) in
-            users.remove(at: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            completion(true)
-        }
-        action.backgroundColor = .systemRed
-        action.image = UIImage(systemName: "trash")
-        return action
-    }
+//    func doneAction(at indexPath: IndexPath) -> UIContextualAction {
+//        let action = UIContextualAction(style: .destructive, title: "trash") { (action, view, completion) in
+//            groups.remove(at: indexPath.row)
+//            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+//            completion(true)
+//        }
+//        action.backgroundColor = .systemRed
+//        action.image = UIImage(systemName: "trash")
+//        return action
+//    }
+    
+    
     // Лайк
     func likeAction (at indexPath: IndexPath) -> UIContextualAction {
         var object = users[indexPath.row]
