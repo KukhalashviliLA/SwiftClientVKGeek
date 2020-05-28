@@ -37,7 +37,10 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите пароль..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z4k-ED-Y5G">
-                                        <rect key="frame" x="133.5" y="353" width="147.5" height="34"/>
+                                        <rect key="frame" x="96.5" y="353" width="221.5" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="221.5" id="rMe-aI-nxz"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
@@ -56,6 +59,9 @@
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите имя пользователя..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1wv-Pb-4sr">
                                         <rect key="frame" x="96.5" y="256" width="221.5" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="221.5" id="54b-3r-Odo"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -65,6 +71,7 @@
                                     <constraint firstItem="K7Y-qI-Z8h" firstAttribute="centerX" secondItem="pSH-oG-mMM" secondAttribute="centerX" id="509-t2-TGW"/>
                                     <constraint firstItem="z4k-ED-Y5G" firstAttribute="top" secondItem="MKE-xE-hyQ" secondAttribute="bottom" constant="8" id="8iD-hY-8qB"/>
                                     <constraint firstItem="7L2-iO-VuL" firstAttribute="bottom" secondItem="Jqt-aD-cyu" secondAttribute="bottom" constant="5" id="9ji-ZV-dKo"/>
+                                    <constraint firstItem="z4k-ED-Y5G" firstAttribute="leading" secondItem="1wv-Pb-4sr" secondAttribute="leading" id="9yH-Dt-vpG"/>
                                     <constraint firstItem="K7Y-qI-Z8h" firstAttribute="top" secondItem="7L2-iO-VuL" secondAttribute="top" constant="30" id="KcN-5n-bH8"/>
                                     <constraint firstItem="MKE-xE-hyQ" firstAttribute="top" secondItem="1wv-Pb-4sr" secondAttribute="bottom" constant="25" id="Kde-HL-ncx"/>
                                     <constraint firstItem="Jqt-aD-cyu" firstAttribute="centerX" secondItem="z4k-ED-Y5G" secondAttribute="centerX" id="Nro-cM-gUH"/>
@@ -531,7 +538,7 @@
                     <navigationItem key="navigationItem" title="Друзья" id="Wx2-NM-dq4">
                         <barButtonItem key="rightBarButtonItem" title="title" image="person.badge.plus" catalog="system" id="5u8-dJ-O9Q">
                             <connections>
-                                <segue destination="fGN-vq-3Bx" kind="show" id="gLY-rY-teC"/>
+                                <segue destination="GyT-8v-g5r" kind="show" id="bhv-Se-eP2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -640,40 +647,6 @@
             </objects>
             <point key="canvasLocation" x="6228.985507246377" y="-469.41964285714283"/>
         </scene>
-        <!--Добавить друга-->
-        <scene sceneID="qr9-JP-svJ">
-            <objects>
-                <tableViewController id="fGN-vq-3Bx" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vZ9-EX-GCt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Поиск новых друзей" id="6Id-Ap-8c6">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="HnA-mT-IMo">
-                                <rect key="frame" x="0.0" y="72" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HnA-mT-IMo" id="avN-gT-2G9">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="fGN-vq-3Bx" id="bCi-a9-JL7"/>
-                            <outlet property="delegate" destination="fGN-vq-3Bx" id="ltr-uH-T1V"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Добавить друга" id="pfV-FM-d1D"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vq5-DM-V3X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4510" y="-1200"/>
-        </scene>
         <!--Друзья-->
         <scene sceneID="S1h-wS-qWj">
             <objects>
@@ -743,11 +716,11 @@
             <objects>
                 <viewController id="GyT-8v-g5r" customClass="AnimationViewController" customModule="app_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4cC-0Z-ZYf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJr-ck-tHS" customClass="AnimationCircle" customModule="app_ios" customModuleProvider="target">
-                                <rect key="frame" x="172" y="443" width="70" height="20"/>
+                                <rect key="frame" x="172" y="398" width="70" height="19"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
@@ -760,15 +733,37 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1oY-yr-jXM"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Jvt-hI-kha"/>
                     <connections>
                         <outlet property="animationView" destination="nJr-ck-tHS" id="Tpn-eQ-lxf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4XX-37-ezO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="818.84057971014499" y="-81.026785714285708"/>
+            <point key="canvasLocation" x="4569.5652173913049" y="-1200"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lfF-e9-6x8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e1b-pl-rd7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pPN-2a-fVe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GyT-8v-g5r" kind="relationship" relationship="rootViewController" id="WkA-cu-5tc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SgE-oU-oJD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3657.971014492754" y="-1200"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="bhv-Se-eP2"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="bubble.right" catalog="system" width="128" height="110"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>

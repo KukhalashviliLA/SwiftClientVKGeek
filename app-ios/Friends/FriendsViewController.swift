@@ -154,9 +154,7 @@ class FriendsViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "friend" {
-            
-            
-            
+        
         }
         
     }

@@ -13,10 +13,6 @@ class AnimationViewController: UIViewController {
     
     @IBOutlet weak var animationView: UIView!
     
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,10 +22,8 @@ class AnimationViewController: UIViewController {
 
 class AnimationCircle: UIControl {
     var circleOne = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-    let circleTwo = UIView(frame: CGRect(x: 23, y: 0, width: 20, height: 20))
-    let circleThree = UIView(frame: CGRect(x: 46, y: 0, width: 20, height: 20))
-    
-    
+    let circleTwo = UIView(frame: CGRect(x: 25, y: 0, width: 20, height: 20))
+    let circleThree = UIView(frame: CGRect(x: 50, y: 0, width: 20, height: 20))
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,9 +45,9 @@ class AnimationCircle: UIControl {
     }
     
     func uisetup() {
-        circleOne.backgroundColor = .gray
-        circleTwo.backgroundColor = .gray
-        circleThree.backgroundColor = .gray
+        circleOne.backgroundColor = .red
+        circleTwo.backgroundColor = .green
+        circleThree.backgroundColor = .blue
         circle()
         self.addSubview(circleOne)
         self.addSubview(circleTwo)
@@ -63,17 +57,16 @@ class AnimationCircle: UIControl {
     
     func Animation () {
         
-        UIView.animate(withDuration: 1.5, delay: 0, options: [.repeat,], animations: {
+        UIView.animate(withDuration: 0.9, delay: 0, options: [.repeat,], animations: {
             self.circleOne.alpha = 0.1
             })
-        UIView.animate(withDuration: 1.5, delay: 0.5, options: [.repeat,], animations: {
+        UIView.animate(withDuration: 0.9, delay: 0.3, options: [.repeat,], animations: {
             self.circleTwo.alpha = 0.1
             })
-        UIView.animate(withDuration: 1.5, delay: 1, options: [.repeat,], animations: {
+        UIView.animate(withDuration: 0.9, delay: 0.6, options: [.repeat,], animations: {
             self.circleThree.alpha = 0.1
             })
 
     }
-    
     
 }
